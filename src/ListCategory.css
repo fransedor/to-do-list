@@ -1,0 +1,32 @@
+.list-category {
+	padding: 16px;
+	background-color: lightskyblue;
+	margin: 0px 16px;
+	border-radius: 16px;
+	min-width: 300px;
+	box-shadow: 2px 2px 2px black;
+	height: min-content;
+}
+.list-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 16px;
+}
+.list-header h2 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.flex {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	margin-bottom: 16px;
+}
+.flex > input {
+	height: 24px;
+	width: 100%;
+}
+.list-items {
+	min-height: 20px;
+}

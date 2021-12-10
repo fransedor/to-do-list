@@ -1,38 +1,64 @@
 .App {
-  text-align: center;
+	padding: 40px 40px;
+	overflow: auto;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+	margin-top: 40px;
+	display: flex;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.add-list {
+	padding: 8px 24px;
+	border: 2px solid black;
+	border-radius: 8px;
+	background-color: white;
+	display: flex;
+	align-items: center;
+	align-self: flex-start;
+	min-width: 250px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.add-list > span {
+	font-size: 24px;
+	margin-right: 8px;
 }
-
-.App-link {
-  color: #61dafb;
+.add-list:hover {
+	background-color: yellow;
+	cursor: pointer;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input-category {
+	padding: 16px;
+	background-color: lightgray;
+	height: fit-content;
+	border-radius: 16px;
+	min-width: 250px;
+	box-shadow: 1px 5px 2px black;
+	margin-bottom: 8px;
+}
+.input-category > input {
+	width: 98%;
+	height: 32px;
+	margin-bottom: 8px;
+}
+.add {
+	background-color: white;
+	padding: 8px 16px;
+	border-radius: 8px;
+	margin-right: 8px;
+}
+.add:hover {
+	cursor: pointer;
+	background-color: yellow;
+}
+.close {
+	border: none;
+	background-color: transparent;
+}
+.close > img {
+	width: 20px;
+}
+.close:hover {
+	cursor: pointer;
+}
+.input-buttons {
+	display: flex;
+	align-items: center;
 }
