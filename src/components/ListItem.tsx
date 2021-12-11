@@ -1,7 +1,8 @@
 import React from 'react';
-import './ListItem.css';
+import '../styles/ListItem.css';
 import {useState} from 'react';
-import * as functions from './handlers';
+import * as functions from '../handlers';
+import { icons } from '../icons';
 
 interface list {
 	name: string;
@@ -17,6 +18,7 @@ interface Props {
 	innerRef: () => any;
 	provided: any;
 }
+
 const ListItem = ({name, id, list, setList,innerRef, provided}:Props) => {
 	const [isEditListClicked, setIsEditListClicked] = useState(false);
 	const [newName, setNewName] = useState("");
@@ -42,7 +44,7 @@ const ListItem = ({name, id, list, setList,innerRef, provided}:Props) => {
 				<input onChange={(e) => functions.inputHandler(e, setNewName)} type="text" placeholder="Enter item name..." id="category" />
 				<div className="input-buttons">
 					<button onClick={() => functions.changeListItem(id, name, newName, list, setList, toggleEditList)} className="add">Change Item Name</button>
-					<button onClick={() => toggleEditList()} className="close"><img src="https://cdn-icons.flaticon.com/png/512/2976/premium/2976286.png?token=exp=1638880654~hmac=a20adcc039217c25734f2efaf638bc09" alt="" /></button>
+					<button onClick={() => toggleEditList()} className="icon"><img src={icons.close} alt="" /></button>
 				</div>
 			</div>}
 		</div>

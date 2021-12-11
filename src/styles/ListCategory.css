@@ -4,6 +4,7 @@
 	margin: 0px 16px;
 	border-radius: 16px;
 	min-width: 300px;
+	max-width: 500px;
 	box-shadow: 2px 2px 2px black;
 	height: min-content;
 }
@@ -28,5 +29,5 @@
 	width: 100%;
 }
 .list-items {
-	min-height: 20px;
+	min-height: 100px;
 }

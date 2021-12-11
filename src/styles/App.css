@@ -48,14 +48,14 @@
 	cursor: pointer;
 	background-color: yellow;
 }
-.close {
+.icon {
 	border: none;
 	background-color: transparent;
 }
-.close > img {
+.icon > img {
 	width: 20px;
 }
-.close:hover {
+.icon:hover {
 	cursor: pointer;
 }
 .input-buttons {

@@ -1,10 +1,10 @@
 import React from 'react';
-import './ListCategory.css';
+import '../styles/ListCategory.css';
 import ListItem from './ListItem';
 import {useState} from 'react';
-import * as functions from './handlers';
+import * as functions from '../handlers';
 import {Droppable, Draggable} from 'react-beautiful-dnd';
-
+import { icons } from '../icons';
 
 interface list {
 	name: string;
@@ -41,15 +41,15 @@ const ListCategory = ({name, id, list, setList}:Props) => {
 				<div className="list-header">
 				<h2>{name}</h2>
 					<div className="list-button">
-						<button onClick={() => toggleEdit()} className="edit close"><img src="https://cdn-icons.flaticon.com/png/512/2213/premium/2213475.png?token=exp=1639022107~hmac=b21cef6bddb0f12e886be2f483f4095a" alt="" /></button>
-						<button onClick={() => functions.removeCategory(id, list, setList)} className="close"><img src="https://cdn-icons.flaticon.com/png/512/2976/premium/2976286.png?token=exp=1638880654~hmac=a20adcc039217c25734f2efaf638bc09" alt="" /></button>
+						<button onClick={() => toggleEdit()} className="edit icon"><img src={icons.edit} alt="" /></button>
+						<button onClick={() => functions.removeCategory(id, list, setList)} className="icon"><img src={icons.close} alt="" /></button>
 					</div>
 				</div>
 			:
 			<div className="flex">
 				<input onChange={(e) => functions.inputHandler(e, setRenameCategory)} type="text" placeholder="Enter new category name..." />
-				<button onClick={() => functions.changeCategory(id, renameCategory, list, setList, toggleEdit)} className="close"><img src="https://cdn-icons.flaticon.com/png/512/1055/premium/1055183.png?token=exp=1639023892~hmac=e6305b1ffdef6d67b5b2d8eafcf065c7" alt="" /></button>
-				<button onClick={() => toggleEdit()} className="close"><img src="https://cdn-icons.flaticon.com/png/512/2976/premium/2976286.png?token=exp=1638880654~hmac=a20adcc039217c25734f2efaf638bc09" alt="" /></button>
+				<button onClick={() => functions.changeCategory(id, renameCategory, list, setList, toggleEdit)} className="icon"><img src={icons.checklist} alt="" /></button>
+				<button onClick={() => toggleEdit()} className="icon"><img src={icons.close} alt="" /></button>
 			</div>
 			}
 			
@@ -77,7 +77,7 @@ const ListCategory = ({name, id, list, setList}:Props) => {
 						<input onChange={(e) => functions.inputHandler(e, setAddItem)} type="text" placeholder="Enter item name..." id="category" />
 						<div className="input-buttons">
 							<button onClick={() => functions.addListItem(id, addItem, list, setList, toggleAddItem)} className="add">Add Item</button>
-							<button onClick={() => toggleAddItem()} className="close"><img src="https://cdn-icons.flaticon.com/png/512/2976/premium/2976286.png?token=exp=1638880654~hmac=a20adcc039217c25734f2efaf638bc09" alt="" /></button>
+							<button onClick={() => toggleAddItem()} className="icon"><img src={icons.close} alt="" /></button>
 						</div>
 					</div>
 			}

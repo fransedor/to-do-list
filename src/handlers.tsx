@@ -16,24 +16,32 @@ export const toggleInput = (set:Function, state:boolean) => {
 }
 
 export const handleDragDrop = (result:any, list:list[], set:Function) => {
+	if(!result.destination) return;
+
 	const sourceCategory = result.source.droppableId;
 	const destinationCategory = result.destination.droppableId;
 	const sourceIndex = result.source.index;
 	const destinationIndex = result.destination.index;
+	const draggedName = result.draggableId.split("-")[1];
 
-	if(!result.destination) return;
+	const checkDuplicates = list[destinationCategory].items.findIndex((element) => element === draggedName);
 
-	let newList = [...list];
-	const [draggedItem] = newList[sourceCategory].items.splice(sourceIndex, 1);
-	newList[destinationCategory].items.splice(destinationIndex, 0, draggedItem);
+	if (checkDuplicates < 0) {
+		let newList = [...list];
+		const [draggedItem] = newList[sourceCategory].items.splice(sourceIndex, 1);
+		newList[destinationCategory].items.splice(destinationIndex, 0, draggedItem);
 
-	set([...newList]);
+		set([...newList]);
+	}
+	if (checkDuplicates >= 0 ) {
+		window.alert("Can't have two items with same name in a category");
+	}
 }
 
 export const addListItem = (id:number, input:string, list:list[], set: Function, reset:Function) => {
 	const categoryIndex = list.findIndex((element) => element.id === id);
 	const checkDuplicates = list[categoryIndex].items.findIndex((element) => element === input);
-	console.log(checkDuplicates);
+
 	if (checkDuplicates < 0) {
 		let newList = [...list];
 		newList[categoryIndex].items.push(input);
